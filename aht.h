@@ -85,9 +85,10 @@ typedef struct
  * @param port     I2C port
  * @param sda_gpio SDA GPIO
  * @param scl_gpio SCL GPIO
+ * @param clk_speed Clock speed in Hz
  * @return `ESP_OK` on success
  */
-esp_err_t aht_init_desc(aht_t *dev, uint8_t addr, i2c_port_t port, gpio_num_t sda_gpio, gpio_num_t scl_gpio);
+esp_err_t aht_init_desc(aht_t *dev, uint8_t addr, i2c_port_t port, gpio_num_t sda_gpio, gpio_num_t scl_gpio, uint32_t clk_speed);
 
 /**
  * @brief Free device descriptor
