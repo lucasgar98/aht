@@ -87,7 +87,7 @@ esp_err_t aht_init_desc(aht_t *dev, uint8_t addr, i2c_port_t port, gpio_num_t sd
         return ESP_ERR_INVALID_ARG;
     }
     // Set to 0 the dev descriptor so that the dev->mutex is created when calling i2c_dev_create_mutex
-    memset(dev, 0, sizeof(dev));
+    memset(dev, 0, sizeof(*dev));
 
     dev->i2c_dev.port = port;
     dev->i2c_dev.addr = addr;
